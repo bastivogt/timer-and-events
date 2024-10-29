@@ -108,7 +108,16 @@ export class Timer {
     }
 
     set eventEmitter(value) {
-        this._eventEmitter = value;
+        if (
+            value instanceof EventEmitter ||
+            value instanceof EventEmitterAdvanced
+        ) {
+            this._eventEmitter = value;
+        } else {
+            throw new Error(
+                "This value is not an instance EventEmitter or EventEmitterAdvanced!"
+            );
+        }
     }
 
     get eventEmitter() {

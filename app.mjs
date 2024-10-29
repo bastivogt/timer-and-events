@@ -63,7 +63,7 @@ t1.eventEmitter.on(TimerEvent.TIMER_STOP, (e) => {
 
 t1.start();
 
-const timeout = new Timer(3000, 0);
+const timeout = new Timer(7000, 0);
 let startTime = 0;
 let endTime = 0;
 timeout.eventEmitter.on(TimerEvent.TIMER_START, (e) => {
